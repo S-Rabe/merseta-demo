@@ -1,0 +1,339 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Data Analysis and Visualization In The Cloud</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="docs"
+                  title="Data Analysis and Visualization In The Cloud"
+                  environment="web"
+                  feedback-link="https://github.com/S-Rabe/merseta-demo/issues">
+    
+      <google-codelab-step label="Overview" duration="0">
+        <p class="image-container"><img style="width: 624.00px" src="img\5572217838b9fa70.jpeg"></p>
+<h2 is-upgraded><strong>H</strong><strong>ow can the cloud be utilized for IoT and Industry 4.0?</strong></h2>
+<p>The key focus of industry 4.0 is the interconnectivity of machines and the sharing of data to improve operations as a whole. As more machines and operations utilize IoT solutions, they start to produce large volumes of data. This additional data needs to be transferred, stored and analysed to capture new efficiencies within operations.</p>
+<h3 is-upgraded><strong>Scalability</strong></h3>
+<p>The cloud computing environment has proven that it can offer the scalability to capture these increased volumes of data as it gets generated from production operations. The biggest companies in the world utilize the cloud to manage enormous traffic volumes and data sets.</p>
+<h3 is-upgraded><strong>Availability</strong></h3>
+<p>Cloud environments are deployed globally with multiple data centers across the world. This ensures that these systems are always available even if a single area is unavailable such as in the event of a power outage. A combination of on-site infrastructure and cloud infrastructure can ensure that operations are never interrupted and visibility is always maintained.</p>
+<h3 is-upgraded><strong>Flexibility</strong></h3>
+<p>Cloud service providers constantly maintain and update their services to offer their clients the latest solutions to their problems. Cloud services can also be uniquely tailored according to the needs and scale of each operation. As operations are updated or scaled up/down the cloud environment can quickly adapt to new requirements.</p>
+<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
+<ul class="checklist">
+<li>A basic understanding of the cloud environment, its advantages and disadvantages.</li>
+<li>How to navigate the Google Cloud Platform.</li>
+<li>How to use BigQuery to navigate massive datasets with ease.</li>
+<li>How to visualize results from Big Query using Data Studio.</li>
+<li>How to use Google Cloud Shell as a development environment.</li>
+<li>How to download, compile and test a simple web application.</li>
+</ul>
+<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
+<ul>
+<li>A modern web browser such as Microsoft Edge, Firefox, Opera or Google Chrome. Ensure your browser is up to date to avoid any unnecessary complications.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="The Cloud Environment" duration="0">
+        <p class="image-container"><img style="width: 624.00px" src="img\311735740cf92e59.jpeg"></p>
+<h2 is-upgraded><strong>What is the cloud?</strong></h2>
+<p>It should be clear at this point that the cloud can be very beneficial to an industry 4.0 operation, but what exactly is the cloud? Fundamentally the cloud is just a global network of computers. These computers are grouped into manageable clusters where they are stored and maintained at facilities known as data centers. The image above shows an example of what a datacenter might look like.</p>
+<p>Cloud providers run specialized software across all the computers which lets them function like one large computing resource. Providers then allow clients to use a portion of this computing resource at a cost. <br></p>
+<p>A good comparison to cloud providers is electric utility companies. Each power plant (or in our case data center) supplies a resource to consumers which they can purchase at a fixed cost. Multiple power plants are connected through a larger power grid. If there is an issue at one power plant, the others are still able to provide power while the issue is fixed.</p>
+<p>Cloud providers function similarly to the example above. They provide computing and IT capabilities at fixed costs to their clients in a similar fashion. Clients do not have to concern themselves with the provisioning and maintenance of the underlying systems as that burden is shifted to the cloud providers.</p>
+<h2 is-upgraded><strong>Advantages of the cloud</strong></h2>
+<p>Some of the advantages to cloud systems have already been explored in the previous section, but there are other benefits to consider.</p>
+<h3 is-upgraded><strong>Cost saving</strong></h3>
+<p>The majority of costs associated with provisioning and maintaining IT infrastructure is shifted to the cloud service provider. Cloud services are generally pay-as-you-go which means the upfront cost compared to on-site solutions is much lower. The amount of staff required to maintain cloud solutions compared to on-site solutions is also lower, resulting in comparable or lower operational costs.</p>
+<h3 is-upgraded><strong>Mobility</strong></h3>
+<p>Since cloud solutions are accessed through the internet, they can be utilized anywhere as long as there is an internet connection available. This allows staff to access cloud systems from remote locations away from the office or while traveling. Achieving something similar with a private on-site solution might require additional engineering effort.</p>
+<h3 is-upgraded><strong>Insight</strong></h3>
+<p>Cloud providers typically offer a suite of analytics tools to help clients monitor their systems and analyze their data. These tools are often free for all clients that use cloud services and can offer valuable insights into operations that would otherwise have to be paid for.</p>
+<h3 is-upgraded><strong>Disaster Recovery</strong></h3>
+<p>Cloud solutions offer the ability to duplicate and synchronize your operations to multiple locations in the event that a disaster disrupts the service at the main location. The backup locations can take over and continue to provide services while the main location recovers. Achieving the same level of comprehensive disaster recovery without using cloud solutions can be very complex and expensive to create and maintain.</p>
+<h3 is-upgraded><strong>Loss Prevention</strong></h3>
+<p>Similar to disaster recovery, the cloud environment offers solutions to ensure that no data stored on devices used during operations is ever lost. By storing data directly in the cloud and accessing it remotely, devices can fail and be replaced without losing any business critical data. In an industry 4.0 application, data generated by IoT devices can be kept in the cloud and still be accessible even when a device or system is no longer operational.</p>
+<h2 is-upgraded><strong>Disadvantages of the cloud</strong></h2>
+<p>As many benefits as there are to cloud solutions, some considerations need to be made to determine if cloud solutions would be viable for your specific operations and needs.</p>
+<h3 is-upgraded><strong>Downtime</strong></h3>
+<p>In the event that cloud providers experience outages to the point where they can no longer provide their services, clients can be affected. If the availability of IT infrastructure is critical to operations, it might be better to consider a hybrid approach with on-site redundancies alongside cloud infrastructure.</p>
+<h3 is-upgraded><strong>Privacy Concerns</strong></h3>
+<p>Despite cloud providers implementing the best industry security standards, there is always a risk that sensitive data could be accessed by unauthorized entities and used for something other than the intended purpose. Specialized services might be required to meet security needs similar to how cloud providers build and maintain isolated data centers for governments.</p>
+<h3 is-upgraded><strong>Reliance on Support</strong></h3>
+<p>In the event that something goes wrong with using cloud infrastructure, you might be at the mercy of the cloud provider&#39;s customer support. Poor support could result in problems taking longer to solve than they typically should. Premium support packages might completely negate any costs saved by moving to the cloud in the first place.</p>
+<h3 is-upgraded><strong>Limitations</strong></h3>
+<p>Using cloud services might impose certain restrictions on operations that would not exist when using a private on-site solution. Cloud services need to be investigated thoroughly to ensure that any restrictions would not impact operations.</p>
+<h3 is-upgraded><strong>Vendor Lock-in</strong></h3>
+<p>Migrating to another cloud provider can be very costly if you become very reliant on the services of a single provider. In the event that a provider does something you are unhappy with (such as increasing costs or removing services), the ability to quickly migrate to alternative providers could be crucial to operations continuing smoothly.</p>
+<h2 is-upgraded><strong>Common Cloud providers</strong></h2>
+<p>Which cloud providers to use can be a daunting decision as each provider has their own strengths and weaknesses. Discussing each service provider in detail is beyond the scope of this exercise, but the following list should provide a starting point for further investigation.</p>
+<p>Some commonly used cloud providers in no specific order include:</p>
+<ul>
+<li><a href="https://aws.amazon.com" target="_blank">Amazon Web Services</a></li>
+<li><a href="https://cloud.google.com" target="_blank">Google Cloud Platform</a></li>
+<li><a href="https://azure.microsoft.com/en-us/" target="_blank">Microsoft Azure</a></li>
+<li><a href="https://www.ibm.com/za-en/cloud" target="_blank">IBM Cloud</a></li>
+<li><a href="https://us.alibabacloud.com/en" target="_blank">Alibaba Cloud</a></li>
+<li><a href="https://www.oracle.com/za/index.html" target="_blank">Oracle</a></li>
+<li><a href="https://www.sap.com/africa/products/cloud-platform.html" target="_blank">SAP</a></li>
+<li><a href="https://www.rackspace.com/cloud" target="_blank">Rackspace Cloud</a></li>
+<li><a href="https://www.vmware.com" target="_blank">VMWare</a></li>
+</ul>
+<p>Services and providers differ depending on country and region. This list is by no means comprehensive and a proper investigation into local providers and services is recommended.</p>
+<h2 is-upgraded><strong>Different types of cloud services</strong></h2>
+<p>Cloud providers typically offer a large variety of services aimed at different applications and industries. These services can broadly be categorized into following fundamental types.</p>
+<h3 is-upgraded><strong>Computation</strong></h3>
+<p>Any service that uses cloud resources to perform some type of operation, task or analysis can be considered a computational task. Some examples of computation services include:</p>
+<ul>
+<li>Virtual machines</li>
+<li>Serverless application platforms</li>
+<li>Cloud GPUs</li>
+<li>AI and Machine learning services</li>
+<li>Data Analysis</li>
+</ul>
+<p>All of these services use CPU, Memory and GPU capacity to perform tasks directly related to business operations or on behalf of other cloud services.</p>
+<h3 is-upgraded><strong>Communication</strong></h3>
+<p>Services in this category are related to the transmission and organization of data within the cloud. Examples of communication services include:</p>
+<ul>
+<li>API Services</li>
+<li>Data streaming solutions</li>
+<li>Message ingestion and delivery services.</li>
+<li>IoT device connection solutions.</li>
+<li>Serverless application platforms.</li>
+<li>Networking services such as firewalls and load balancers.</li>
+</ul>
+<p>Communication services are critical to industry 4.0 as they will integrate with devices and systems used in operations to collect data.</p>
+<h3 is-upgraded><strong>Storage</strong></h3>
+<p>Services that offer any form of data storage belong in this category. Some example of storage services include:</p>
+<ul>
+<li>Low cost archive storage for data that is accessed infrequently.</li>
+<li>In-memory storage solutions such as Redis or Memcache.</li>
+<li>Database services</li>
+<li>Regular hard-drive disk or solid-state disk storage solutions</li>
+<li>File sharing and collaboration solutions.</li>
+<li>Data backup and redundancy services.</li>
+</ul>
+<h3 is-upgraded><strong>Operational</strong></h3>
+<p>Any services related to the management or monitoring of other services are categorized as operational services. This includes services such as logging, security, configuration, migrations, transformations, ect. These services might use the previous service types to perform their tasks and aid with managing resources actively used for operations.</p>
+<h2 is-upgraded><strong>Conclusion</strong></h2>
+<p>You should now have an understanding of what the cloud environment is and the various providers and service types available. Feel free to visit the websites of the cloud providers listed above and explore their individual offerings.</p>
+<p>Researching the available services in each category and selecting the appropriate solution to fit the needs of your operation is critical to utilizing the cloud environment effectively.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="The Google Cloud Platform" duration="0">
+        <h2 is-upgraded><strong>Introduction</strong></h2>
+<p>For the purpose of the exercise we will be using the Google Cloud Platform to demonstrate some of the benefits that the cloud environment might offer to Industry 4.0. The exercise performed today is not unique to the Google cloud environment and can be done on other cloud provider platforms as well.</p>
+<aside class="special"><p><strong>Tip: </strong>Some of the images present in this documentation might be hard to read at the smaller presented scale. If an image is unclear at the smaller size you can enlarge it by right clicking the image and selecting &#34;Open Image in New Tab&#34;.</p>
+</aside>
+<h2 is-upgraded><strong>Google Account</strong></h2>
+<p>For this exercise you will need a valid google account to access the Google Cloud Platform (GCP). If you have a valid Google account feel free to use it. If you do not have a valid Google account, you can register one <a href="https://accounts.google.com/signup/v2" target="_blank">here</a>. You can register a Google account with an existing email address or by creating a new gmail address with the account.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\18effe7e6327059b.jpeg"></p>
+<p>If you do decide to use an existing email address, you will have to verify your Google account by signing in to your email and following the instructions in the verification email.</p>
+<h2 is-upgraded><strong>Cloud Console</strong></h2>
+<p>Once your Google account is prepared and you are signed in, we can proceed to the Google Cloud Console. The console is available at <a href="http://console.cloud.google.com" target="_blank">console.cloud.google.com</a>. Once you visit the link you should be greeted by the dashboard. If you have not signed it at this point, you will first be prompted to sign into your Google account.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\b15e2c41f7d48071.png"></p>
+<p>This dashboard provides you with metrics related to the project currently selected. Some of the information visible on the dashboard include:</p>
+<ul>
+<li>Project Details</li>
+<li>API traffic</li>
+<li>Summary of resources being used</li>
+<li>Reporting related to errors that occurred.</li>
+<li>Any custom alerts that were configured, such as cost thresholds.</li>
+</ul>
+<p>The dashboard also provides links to the latest news articles related to GCP. Link to tutorials and documentation are also available in case you need to learn more about any specific service or the cloud platform in general.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\fd1e781d344e565f.png"></p>
+<p>In order to work with any specific service on the platform, you can access it through the menu at the top left of the screen. Here you will find every service publicly available on GCP. For this exercise we will primarily be concerned with the BigQuery service located in the Big Data section.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Data Analysis In The Cloud" duration="0">
+        <h2 is-upgraded><strong>Introduction</strong></h2>
+<p>In this first exercise we will explore data analysis tools available on GCP by investigating a publicly available dataset. Next, we can query the dataset using BigQuery and present the results on a dashboard created with Data Studio.</p>
+<h2 is-upgraded><strong>Public Datasets</strong></h2>
+<p>Before we can analyze any data, we need a dataset to work with. Luckily there are plenty of public datasets that have been provided by various organizations and companies around the world. These datasets can be found on the GCP Marketplace along with other products and services tailored to work within the GCP ecosystem.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\5c97da0d5cc2a520.jpeg"></p>
+<p>On the left hand side there is an option for datasets. Once selected, all the available will be shown. Feel free to browse through the available datasets or any other products on the marketplace on your own if you are interested. The dataset we will be working with in this exercise is the Github Activity Data. This dataset can be found <a href="https://console.cloud.google.com/marketplace/product/github/github-repos" target="_blank">here</a>.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\4006d047e3d30228.jpeg"></p>
+<p>Once you click on the &#34;View Dataset&#34; button you will be redirected to the GCP console where we will start to explore BigQuery in more detail.</p>
+<h2 is-upgraded><strong>BigQuery</strong></h2>
+<h3 is-upgraded><strong>What is BigQuery?</strong></h3>
+<p>As the amount of data keeps constantly, new solutions are needed to analyze larger and larger datasets. BigQuery is a data warehousing solution that allows you to query massive amounts of data by leveraging the processing power of massive data centers.</p>
+<p>Large datasets are split into small chunks and stored across thousands of hard drives. When the data is queried, the request is sent out across all the machines housing those hard drives and executed in parallel. The results are then stitched together and the final, combined result is sent back as the answer to the query.</p>
+<p>If you are interested in more details about the service itself, feel free to watch this additional video presented at the Google Next 2019 event.</p>
+<iframe class="youtube-video" src="https://www.youtube.com/embed/ufJ2W3EHIgA?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3 is-upgraded><strong>The BigQuery Interface</strong></h3>
+<p>In the previous section about public datasets we visited the Github Activity Data page and selected the &#34;View Dataset&#34; option. This should have opened a new tab for you and loaded the GCP BigQuery console page. The image below shows an example of what you should be seeing.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\4884c74f798a0bd.jpeg"></p>
+<aside class="special"><p><strong>Tip: </strong>You can close any of the notifications on the screen if they get in your way by selecting &#34;Dismiss&#34;. We will not be upgrading or enabling any additional features for the purpose of this exercise.</p>
+</aside>
+<p>In the column on the left hand side under &#34;Resources&#34; you can see all the public datasets currently available on GCP. The one we are interested in is called &#34;github_repos&#34; and should be highlighted.</p>
+<p>The top half of the screen provides you space to type out queries in a SQL-like language. The bottom half of the screen currently contains details about the selected dataset and a series of buttons you can use to interact with the dataset. This bottom half of the screen will also be used to display results once a query is executed.</p>
+<p>If you click on the &#34;github_repos&#34; entry in the left hand column, it should reveal a series of nested entries underneath it as shown in the image below. The way data is organized in the BigQuery dashboard is similar to most relational databases. The main dataset (in our case &#34;github_repos&#34;) contains a collection of tables. Each table has rows and columns just like tables in relational databases or spreadsheet applications like Google Sheets or Microsoft Excel.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\6a11682b3d9607a6.jpeg"></p>
+<p>If you click on one of the tables under &#34;github_repos&#34; such as &#34;commits&#34; for example, the bottom half of the screen will change to show you detailed information about the table instead of the overall dataset.</p>
+<p>The first thing you will see in the bottom is the Schema of the table. Similar to schema&#39;s in most database solutions, the schema describes the structure of the data stored within the table. Each entry in the schema contains the following:</p>
+<ul>
+<li>The name of the column.</li>
+<li>The data type.</li>
+<li>The mode of the column (if the column should be unique, can be left empty, ect).</li>
+<li>Policy tags to control who is access to the column</li>
+<li>An optional description.</li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img\4a50c501fa27ae9.jpeg"></p>
+<p>The next option in the bottom half next to Schema is the Details section as shown in the image below. This section contains some information about the table itself such as the ID, size of the stored data, number of rows, ect. Knowing how big tables are will become important once we start running queries.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\eedd2a3ceba01efc.png"></p>
+<p>The final section next to Details is the Preview section as shown in the image below. This section lets you browse through the rows of the table. This can be very useful for new datasets to investigate the contents and get a better understanding of the data. You can also copy values from the Preview into the query editor above, allowing you to query for specific values quickly without having to type out the entire ID.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\2609ead1d3c3096a.jpeg"></p>
+<aside class="special"><p><strong>Tip: </strong>You might see some warning messages about the contents of the table when you visit the preview screen. These are fairly common for really large datasets and inform you of any limitations imposed on the previewed data to keep the User Interface running smoothly. For this exercise you can ignore them.</p>
+</aside>
+<h3 is-upgraded><strong>Running Your First Query</strong></h3>
+<p>Now that we have covered the most important aspects of the BigQuery user interface, we are ready to write and run our first query. For the purpose of this exercise we will provide all the queries for you to copy and paste into the editor. </p>
+<p>If you know the SQL language the queries will seem very familiar as BigQuery tries to conform to the latest SQL standard. There is however some syntax that is unique to BigQuery and will not work in other database environments.</p>
+<pre><code>SELECT
+  lang.name AS Language,
+  COUNT(lang.name) AS Count,
+FROM bigquery-public-data.github_repos.languages,
+UNNEST(language) AS lang
+GROUP BY lang.name
+ORDER BY Count DESC</code></pre>
+<p>You can copy and paste the Query into the editor but wait for the editor to check your query for any errors before you run it. Once the editor is done, you will see a green checkmark on the far right of the screen as shown below. </p>
+<p>You will also see how much data your query will process. In BigQuery, you pay for the amount of data you store within the service and the amount of data all your queries have processed in total every billing period (typically monthly).</p>
+<p class="image-container"><img style="width: 624.00px" src="img\fa4c32b7f763deec.jpeg"></p>
+<aside class="special"><p><strong>Note: </strong>Google gives every user 1TB of query capacity a month with which you can query any datasets public or private. Our query in this example processed about 57MB of data every time it was run. This means we can run a query of this size approximately 17500 times before we use up our monthly free quota. Query results also get cached so if you frequently run the same query and no new data is added, returning the cached result will not add to your quota.</p>
+</aside>
+<p>At this point you can press &#34;Run&#34; and wait for the query to execute. The query we are running looks at the &#34;languages&#34; table in our &#34;github_repos&#34; dataset. The &#34;languages&#34; table documents which programming languages were being used in the 3.3 million public projects available on Github at the time.</p>
+<p>The query will go through each row and count the number of times each language was used. Once it is finished running, the bottom half of the screen should change to show you the results. The programming languages are listed from the most to least used and also shows how many projects used each language.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\2142cf8362180bcd.jpeg"></p>
+<p>Above the results you will see some tabs with information related to the execution of the query. Job Information contains metadata about the query such as the ID, owner, location, execution dates and run times. The Results and JSON tabs provide the query results in different formats depending on how your viewing preference. </p>
+<p>The Execution Details tab contains a step by step breakdown of how the query was executed and the times each step took. This information is mainly used to optimize queries to minimize calculation times and costs, but is beyond the scope of our exercise.</p>
+<p>Above these tabs you should see how long the query took to execute and the amount of data that was processed. Typically for this query it should execute in about 1.6 seconds. Processing 3.3 million lines of data in 1.6 seconds is slow and can be outperformed by almost any conventional transactional database solution. Transactional databases aim to return queries within milliseconds and are constantly optimized to maintain those speeds.</p>
+<p>BigQuery however, is not a transactional database solution. The value of BigQuery becomes clear when you start dealing with petabytes of data and billions of rows in tables. BigQuery will consistently offer query durations within seconds even at these massive scales. Achieving similar performance in conventional transactional databases would require a lot of engineering effort that might not be possible or cost effective.</p>
+<p>The reason behind this is that the cloud environment can scale to accommodate your datasets and query sizes. As your data and queries grow in size, more computing power in data centers can be dedicated to ensure results are generated in reasonable times. Since BigQuery bills according to the size of your query, your costs scale with the size of the operations and the data it produces.</p>
+<p>This optional video provides some additional examples of queries being done on massive datasets.</p>
+<iframe class="youtube-video" src="https://www.youtube.com/embed/Gma2qGLK39A?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>As we previously discussed, one of disadvantages of the cloud is the limitations on services imposed by using the cloud over an on-premise solution. Understanding and operating within those limitations is crucial to using cloud environments effectively. All the limitations of the BigQuery service can be found in the official documentation <a href="https://cloud.google.com/bigquery/quotas" target="_blank">here</a>.</p>
+<p>If you are familiar with SQL, feel free to modify the query we used in this exercise or write your own if you would like to explore the public datasets more. Just be conscious of how much data your queries process and the 1TB free quota. Feel free to close the BigQuery interface once you are finished.</p>
+<h3 is-upgraded><strong>Final Thoughts</strong></h3>
+<p>BigQuery is one of many new tools that exists because of the cloud environment and offers new ways to analyze large datasets and lower costs. Affordable data analysis solutions will be crucial to navigating and leveraging the large datasets that are being produced by IoT systems today and in the future.</p>
+<h2 is-upgraded><strong>Data Studio</strong></h2>
+<h3 is-upgraded><strong>What is Data Studio?</strong></h3>
+<p>BigQuery is a service that allows you to store and analyze data. Data Studio is a presentation layer with which you can package your results and communicate it to others. Business Intelligence solutions are not a new concept and plenty of products and services have existed on the market for a long time. </p>
+<p>A few of these service you might have heard of before include:</p>
+<ul>
+<li><a href="https://powerbi.microsoft.com/en-us/" target="_blank">Microsoft Power BI</a></li>
+<li><a href="https://www.tableau.com" target="_blank">Tableau</a></li>
+<li><a href="https://www.qlik.com/us/" target="_blank">Qlik Sense</a></li>
+<li><a href="https://www.sas.com/en_us/solutions/business-intelligence.html" target="_blank">SAS</a></li>
+<li><a href="https://www.ibm.com/products/software" target="_blank">IBM Cognos</a></li>
+<li><a href="https://www.oracle.com/business-analytics/" target="_blank">Oracle BI</a></li>
+</ul>
+<p>Data Studio is Google&#39;s offering in the BI world and is completely integrated with their cloud ecosystem. There are no costs associated with DataStudio directly but since is connects to services like BigQuery to fetch results those services will generate costs in the background.</p>
+<p>Like with everything we have discussed so far, there are advantages and disadvantages to using specific BI solutions. In the case of Data Studio a key advantage is the integration with all Google cloud services. This exercise will show you how quickly you can create a report and populate it with data from the GCP ecosystem. </p>
+<p>This advantage does, however, also have the disadvantage of vendor lock. Data Studio is a proprietary technology of Google which means you become very dependent on them when using it. If you were to build out your reports and dashboard with Data Studio and wanted to move to a different platform at a later date it might require a lot of effort to accomplish.</p>
+<p>Vendor lock-in is not a problem unique to Data Studio so be mindful of which services and technologies you decide to use. The ideal solutions are widely adopted technologies that are supported by a variety of different service providers. This ensures you have options when migrating from one provider to another without having to redo your entire system.</p>
+<p>Data Studio reports are made up of 4 main components as shown in the image below. Data sets are any form of stored data that might want to process and visualize. In our previous exercise the tables in BigQuery are considered a dataset.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\3213832beb120ae8.png"></p>
+<p>Data sources are sets of results exposed to the Data Studio reporting environment. We can use these data sources to populate tables, charts, graphs or any other visualization options. These datasets can also be filtered to only show certain subsets of the data, for example only showing results for a specific year or month.</p>
+<p>Connectors are the bridge between a data set and a data source. Any transformations to the raw data that needs to happen to produce the data source is done inside a connector. In our BigQuery exercise the SQL query we wrote to group projects by the languages they use is an example of a connector.</p>
+<p>The final component is the reports themselves. This is all the visualizations and sharing capabilities offered by the Data Studio editor that we will explore in this exercise.</p>
+<h3 is-upgraded><strong>Getting Started</strong></h3>
+<p>Now that we understand the role of Data Studio, let&#39;s start exploring the service and see what it has to offer. To start off, visit the <a href="https://datastudio.google.com/" target="_blank">Data Studio website</a> with any modern web browser. If you are still signed into your Google account from doing the BigQuery exercise, you should see a home screen similar to the one shown below.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\58d1b3bd793c46e5.jpeg"></p>
+<p>Data Studio provides you with a few example reports as well as a report that serves as a quick tutorial. Feel free to look at these reports if you want as they can give you a good idea of what Data Studio is capable of.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\3e1c23e7d49cc989.png"></p>
+<p>The first thing we will have to do before we can visualize results is create a new Data source. Select the &#34;Create&#34; button in the top left corner. If this is your first time using Google Data Studio you will be prompted with an introduction and short description of Data Studio. Feel free to read through this additional information if you want. If you have used Data Studio before and accepted the terms and conditions, feel free to skip to the next section of the exercise.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\9ed61d7b4e016d41.png"></p>
+<p>The next page will ask that you accept the terms and conditions. You can leave the company field empty, select the appropriate country and language. Finally, check the checkbox to indicate you acknowledge the terms and press &#34;Accept&#34; to proceed.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\7948988920f9394e.png"></p>
+<p>The last page you will be presented with lets you pick if you want to receive emails about Data Studio related features and products. You can select the appropriate options you want and finish.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\ce22e78b04898cb6.png"></p>
+<p>Once you have accepted the terms and conditions, go to the &#34;Create&#34; button again and select Data source. This will redirect you to the data source creation page which we will cover in the section below.</p>
+<h3 is-upgraded><strong>Adding A Data Source</strong></h3>
+<p>As we have mentioned before, data sources are the results you want to use in your reports. Google provides a wide array of options for data sources that can connect to many existing services and data storage solutions. These pre-packaged solutions also serve as the connector to the raw data.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\490cbc35a65f3a72.png"></p>
+<p>For this exercise we will be using the &#34;BigQuery&#34; data source. You can find and select it in the top row as show in the image above.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\2a9bcfe6f4c205f1.png"></p>
+<p>Once selected, your need to authorize Data Studio to access your Google Cloud projects. Data Studio exists as a separate service from the Google cloud platform so you need to allow them access on your behalf. Press &#34;Authorize&#34; when you are ready.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\87b5ea6f18005154.png"></p>
+<p>In the next step you need to define which data will be used for this data source. In the first column, select &#34;Public Datasets&#34; as we will be working with the same dataset we did in the previous exercise. </p>
+<p>The next column will show you a list of your projects you can use as the billing project. The processing costs for running this datasource will be incorporated into the costs of the project you select. There should only be one option if this is your first time using GCP and Data Studio.</p>
+<p>The next column will be the dataset you want to use. For this exercise it will be the same dataset we used before. Search down the list for &#34;github_repos&#34; and select it. Once you select the correct dataset, the list of Tables should update and show the same tables we worked with in BigQuery. Select &#34;languages&#34; again as we want to recreate the same results we saw in BigQuery.</p>
+<p>Ensure your results match the screenshot above. The only difference should be your billing project name as Google generates a different name for each project. Once you are sure you have the right options selected, press &#34;Connect&#34; in the top right corner.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\452f3e8edd30f122.png"></p>
+<p>This page lets you customize the data columns you receive from the languages table one last time before using it in reports. You can customize existing columns like changing the name or formatting it will display.</p>
+<p>You can also create additional columns that might be a combination of several other columns. An example might be to add two other columns together and make it available as a new column.For now, we won&#39;t change anything on this page. Feel free to come back at a later point once you finish the exercise and experiment with creating additional columns if you want to.</p>
+<p>Press &#34;Create Report&#34; in the top right corner when you are ready to proceed. This will redirect you to the Report editor.</p>
+<h3 is-upgraded><strong>Exploring The Interface</strong></h3>
+<p>Data Studio comes with an web-based editing environment in which you can create your reports. Being able to edit reports from any computer that has an internet connection and a web browser offers a lot of flexibility and makes it possible for people to collaborate easily on reports.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\88e9b5537840ffff.png"></p>
+<p>The first thing you will see is a prompt asking if you want to add data to your report. Since we created the report from the data source we just defined, Data Studio automatically tries to add it to your new report. When you are ready, click the &#34;Add To Report&#34; button.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\5e0c4b50bd85c402.png"></p>
+<p>After adding the data source, the editor will create a simple table for you containing data from the languages table. Right now the table is showing the names of each entry in the table which is not what we want. We want to see the same results we queried in the BigQuery editor.</p>
+<p>To get those same results, we need to change the setting of this table on the right-hand side of the screen. Under the &#34;Dimension&#34; section, change the green &#34;repo_name&#34; option to the &#34;language.name&#34; option. This change tells the table that you want to group your data by the &#34;language.name&#34; data column instead of the &#34;repo_name&#34; column in the data set.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\fbde1b8da37fb36b.png"></p>
+<p>Once you have changed the Dimension setting on the right, the table should now show you similar results to what we calculated in the BigQuery portion of this exercise. Feel free to experiment with the table size and position. In the screenshot above I made the table longer to show more entries at once.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\7f994c74b7536789.png"></p>
+<p>We can also show these same results on a chart. At the top of the screen, select &#34;Add a chart&#34;. It will open up a dropdown menu from which you can pick the type of chart you want to add to the page. There are various different kinds of charts available depending on your needs. Certain results will be easier to understand depending on how you present them.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\528a107bbe0ab377.png"></p>
+<p>For this exercise, select a simple bar chart to show the results. The chart should inherit the setting used for the table in this case so it will already show you the correct results. The bar chart makes it slightly easier to see how many projects use each programming language at a glance. Feel free to experiment with the chart positioning and size just like you did for the table.</p>
+<p>You can also rename this report by clicking on the &#34;Untitled Report&#34; in the top left corner. Reports can also contain other things such as title, images, shapes, ect. This exercise was mainly aimed at displaying the available data on the page, but you can customize and add other elements to the report if you want. Don&#39;t be afraid to experiment and explore the Data Studio editor.</p>
+<p>Reports can also be composed of multiple pages. You can add additional pages by selecting &#34;Add a page&#34; in the top left corner of the screen. The way to typically use pages is to build out multiple page reports and have each page communicate something to the reader with the help of visual aids such as tables and charts.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\3f94f397fe4546b1.png"><br></p>
+<p>Once you are happy with your report you can press the &#34;View&#34; button in the top right of the screen. This will show you the report as others would see it when they open it. If you want to make further changes later you can press the &#34;Edit&#34; button again and continue working on your report.</p>
+<h3 is-upgraded><strong>Sharing Reports</strong></h3>
+<p>Sharing reports with others is a standard feature in Data Studio. You can choose to print out your report or save it as a PDF if you prefer. Keep in mind that if you use these options you need to configure the report completely before you save it as you cannot change the data once the report is saved.</p>
+<p>You can also share your reports as a live web page that people can visit. The live version will continue to update as data gets added. For the other sharing solution you would have to print or save the report to PDF again to include data that was added since the previous time you saved it.</p>
+<p class="image-container"><img style="width: 624.00px" src="img\7062fbe4aa762afa.png"></p>
+<p>To access the sharing options, select the &#34;Share&#34; button in the top right of the screen. You can share the report with specific people by inviting them via an email or you can create a public link that you can send to others. Feel free to share your report with others once it is finished.</p>
+<p>You can also invite others to collaborate on reports with you, allowing multiple people to edit the same report. This can be useful if people work from remote locations and all need to contribute to the same report.<br></p>
+<h3 is-upgraded><strong>Final Thoughts</strong></h3>
+<p>Tools like BigQuery and Data Studio allow you to store, process and visualize data quickly without having to deploy and manage IT infrastructure yourself. With basic SQL knowledge you can analyze massive datasets in BigQuery quickly by leveraging the cloud infrastructure Google has developed. </p>
+<p>Data Studio offers a way to create live reports that stay up to date as the data used in the reports changes over time. Depending on your needs, a cloud service such as Data Studio can be a cheap and easy to use solution for your business intelligence needs. Always keep in mind that there are limitations to what you can achieve with services like Data Studio and evaluating different solutions is key to using the cloud environment effectively.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Feedback (Optional)" duration="0">
+        <p>If you have any feedback or issues while doing this exercise, please feel free to give us feedback using one of the following channels.</p>
+<h2 is-upgraded><strong>eFundi</strong></h2>
+<p>We have created a chat room on eFundi where you can ask any question you might have or if you just want to provide feedback. You can find the chat room <a href="http://efundi.nwu.ac.za/portal/site/5329242f-ad32-4ff3-81a6-ed931a8828bf/tool/6367b577-62f6-4df9-b962-f876a07d7ce1/room" target="_blank">here.</a></p>
+<p class="image-container"><img style="width: 624.00px" src="img\6408d196ba8f66ff.png"></p>
+<h2 is-upgraded><strong>Github</strong></h2>
+<p>If you have a Github account, you can also open up and Issue on Github using the <a href="https://github.com/S-Rabe/merseta-demo/issues" target="_blank">issues page.</a> </p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

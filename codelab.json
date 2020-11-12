@@ -1,0 +1,27 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-11-12T18:03:29Z",
+  "id": "docs",
+  "duration": 0,
+  "title": "Data Analysis and Visualization In The Cloud",
+  "authors": "Schalk Rabe",
+  "summary": "In this codelab you will learn some of the fundamental technologies and services used to create and deploy software in the cloud environment.",
+  "source": "1sQh4FjulPI0LB9YefUbI8-OlBYrEo2xxO09L3phUJ0M",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "gcp",
+    "github",
+    "web"
+  ],
+  "feedback": "https://github.com/S-Rabe/merseta-demo/issues",
+  "url": "docs"
+}
