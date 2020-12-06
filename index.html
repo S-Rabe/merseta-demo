@@ -198,7 +198,7 @@
 <ul>
 <li>The name of the column.</li>
 <li>The data type.</li>
-<li>The mode of the column (if the column should be unique, can be left empty, ect).</li>
+<li>The mode of the column (if the column should be unique, can be left empty, etc).</li>
 <li>Policy tags to control who is access to the column</li>
 <li>An optional description.</li>
 </ul>
@@ -234,7 +234,7 @@ ORDER BY Count DESC</code></pre>
 <p>The reason behind this is that the cloud environment can scale to accommodate your datasets and query sizes. As your data and queries grow in size, more computing power in data centers can be dedicated to ensure results are generated in reasonable times. Since BigQuery bills according to the size of your query, your costs scale with the size of the operations and the data it produces.</p>
 <p>This optional video provides some additional examples of queries being done on massive datasets.</p>
 <iframe class="youtube-video" src="https://www.youtube.com/embed/Gma2qGLK39A?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>As we previously discussed, one of disadvantages of the cloud is the limitations on services imposed by using the cloud over an on-premise solution. Understanding and operating within those limitations is crucial to using cloud environments effectively. All the limitations of the BigQuery service can be found in the official documentation <a href="https://cloud.google.com/bigquery/quotas" target="_blank">here</a>.</p>
+<p>As we previously discussed, one of the disadvantages of the cloud is the limitations on services imposed by using the cloud over an on-premise solution. Understanding and operating within those limitations is crucial to using cloud environments effectively. All the limitations of the BigQuery service can be found in the official documentation <a href="https://cloud.google.com/bigquery/quotas" target="_blank">here</a>.</p>
 <p>If you are familiar with SQL, feel free to modify the query we used in this exercise or write your own if you would like to explore the public datasets more. Just be conscious of how much data your queries process and the 1TB free quota. Feel free to close the BigQuery interface once you are finished.</p>
 <h3 is-upgraded><strong>Final Thoughts</strong></h3>
 <p>BigQuery is one of many new tools that exists because of the cloud environment and offers new ways to analyze large datasets and lower costs. Affordable data analysis solutions will be crucial to navigating and leveraging the large datasets that are being produced by IoT systems today and in the future.</p>
@@ -254,11 +254,11 @@ ORDER BY Count DESC</code></pre>
 <p>Like with everything we have discussed so far, there are advantages and disadvantages to using specific BI solutions. In the case of Data Studio a key advantage is the integration with all Google cloud services. This exercise will show you how quickly you can create a report and populate it with data from the GCP ecosystem. </p>
 <p>This advantage does, however, also have the disadvantage of vendor lock. Data Studio is a proprietary technology of Google which means you become very dependent on them when using it. If you were to build out your reports and dashboard with Data Studio and wanted to move to a different platform at a later date it might require a lot of effort to accomplish.</p>
 <p>Vendor lock-in is not a problem unique to Data Studio so be mindful of which services and technologies you decide to use. The ideal solutions are widely adopted technologies that are supported by a variety of different service providers. This ensures you have options when migrating from one provider to another without having to redo your entire system.</p>
-<p>Data Studio reports are made up of 4 main components as shown in the image below. Data sets are any form of stored data that might want to process and visualize. In our previous exercise the tables in BigQuery are considered a dataset.</p>
+<p>Data Studio reports are made up of 4 main components as shown in the image below. Data sets are any form of stored data that you might want to process and visualize. In our previous exercise the tables in BigQuery are considered a dataset.</p>
 <p class="image-container"><img style="width: 624.00px" src="img\3213832beb120ae8.png"></p>
 <p>Data sources are sets of results exposed to the Data Studio reporting environment. We can use these data sources to populate tables, charts, graphs or any other visualization options. These datasets can also be filtered to only show certain subsets of the data, for example only showing results for a specific year or month.</p>
 <p>Connectors are the bridge between a data set and a data source. Any transformations to the raw data that needs to happen to produce the data source is done inside a connector. In our BigQuery exercise the SQL query we wrote to group projects by the languages they use is an example of a connector.</p>
-<p>The final component is the reports themselves. This is all the visualizations and sharing capabilities offered by the Data Studio editor that we will explore in this exercise.</p>
+<p>The final component is the reports themselves. These are all the visualizations and sharing capabilities offered by the Data Studio editor that we will explore in this exercise.</p>
 <h3 is-upgraded><strong>Getting Started</strong></h3>
 <p>Now that we understand the role of Data Studio, let&#39;s start exploring the service and see what it has to offer. To start off, visit the <a href="https://datastudio.google.com/" target="_blank">Data Studio website</a> with any modern web browser. If you are still signed into your Google account from doing the BigQuery exercise, you should see a home screen similar to the one shown below.</p>
 <p class="image-container"><img style="width: 624.00px" src="img\58d1b3bd793c46e5.jpeg"></p>
